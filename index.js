@@ -12,7 +12,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use('/api' , require('./routes/apiUserRoutes'))
+app.use('/api/users' , require('./routes/apiUserRoutes'))
+app.use('/api/celebs' , require('./routes/apiCelebsRoutes'))
+app.use('/api/votes' , require('./routes/apiVotesRoutes'))
 
 
 
