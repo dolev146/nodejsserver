@@ -34,19 +34,16 @@ const sendMail = async (email) => {
 };
 
 
-
-
-
-router.get('/', async (req, res) => {
-    console.log("get request sending celebs")
+router.post('/', async (req, res) => {
+    console.log("post request sending celebs")
     let { email } = req.body;
     console.log(email);
     sendMail(`${email}`);
     res.status(200).json({ "message": "success get all celebs" })
 })
 
-router.post('/', (req, res) => {
-    console.log("post request create celeb")
+router.get('/', (req, res) => {
+    console.log("get request create celeb")
     res.status(200).json({ "message": "success create celeb" })
 })
 

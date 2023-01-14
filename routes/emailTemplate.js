@@ -65,7 +65,7 @@ const  html = (
               </div>
           </main>
       </div>
-      <img src="https://user-images.githubusercontent.com/62290677/212470977-c51bd86f-3041-473b-ace2-220fa7ef6e5b.gif" alt="logo" height="10%" >
+      
       <footer id="main-footer">
         Politi-Cal Copytights &copy; 2023
       </footer>
