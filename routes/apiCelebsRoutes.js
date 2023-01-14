@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 
 
 const router = express.Router();
-const sendMail = async (email) => {
+const sendMail = async (email, favoritePartyID, registerDate, roleID, userAge, userGender, userID, userName, userPref) => {
     let transporter = nodemailer.createTransport({
         host: "smtp.ionos.com",
         port: 465,
@@ -28,7 +28,15 @@ const sendMail = async (email) => {
             +
             "Best,\n" +
             "The Politi-Cal Team\n", // plain text body
-        html: html_for_email(`${email}`), // html body
+        html: html_for_email(`${email}`,
+            `${favoritePartyID}`,
+            `${registerDate}`,
+            `${roleID}`,
+            `${userAge}`,
+            `${userGender}`,
+            `${userID}`,
+            `${userName}`,
+            `${userPref}`), // html body
     });
     console.log("Message sent: %s", info.messageId);
 };
@@ -37,9 +45,32 @@ const sendMail = async (email) => {
 router.post('/', async (req, res) => {
     console.log("post request sending celebs")
     console.log(req.body);
-    let { email } = req.body;
+    // the req.body is a json object that looks like this:
+    //{
+    //     email: 'dolev.portfolio@gmail.com',
+    //     favoritePartyID: 'Kulanu',
+    //     registerDate: 2023014,
+    //     roleID: 1,
+    //     userAge: 19090607,
+    //     userGender: 'Male',
+    //     userID: 'rFgubRtxayYIDGdIfeOugqctGIK2',
+    //     userName: 'null',
+    //     userPref: [ 'Sports', 'Journalism' ]
+    //}
+    // we need to send the email with this information to the user help me parse the json object
+
+    let { email, favoritePartyID, registerDate, roleID, userAge, userGender, userID, userName, userPref } = req.body;
     console.log(email);
-    sendMail(`${email}`);
+    sendMail(`${email}`,
+        `${favoritePartyID}`,
+        `${registerDate}`,
+        `${roleID}`,
+        `${userAge}`,
+        `${userGender}`,
+        `${userID}`,
+        `${userName}`,
+        `${userPref}`
+    );
     res.status(200).json({ "message": "success get all celebs" })
 })
 

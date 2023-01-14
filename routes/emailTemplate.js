@@ -1,7 +1,7 @@
-const  html = (
-    userEmail
-  ) => {
-    return `<!DOCTYPE html>
+const html = (
+  email, favoritePartyID, registerDate, roleID, userAge, userGender, userID, userName, userPref
+) => {
+  return `<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -61,7 +61,12 @@ const  html = (
               </div>
               <p id="append-content-here">This is the information i received from you</p>
               <div id="the-content">
-                  <p>Your Email: ${userEmail} </p>
+                  <p>Your Email: ${email} </p>
+                  <p>Your Favorite Party: ${favoritePartyID} </p>
+                  <p>Your Registration Date: ${registerDate} </p>
+                  <p>Your Role: ${roleID} </p>
+                  <p>Your userGender: ${userGender} </p>
+                  <p>Your userPref: ${userPref} </p>
               </div>
           </main>
       </div>
@@ -72,6 +77,6 @@ const  html = (
   </body>
   </html>
   `;
-  };
-  
-  module.exports = html;
+};
+
+module.exports = html;
