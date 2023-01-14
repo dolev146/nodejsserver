@@ -3,13 +3,10 @@ const express = require("express");
 const html_for_email = require("./emailTemplate");
 
 const nodemailer = require("nodemailer");
-// https://politicalnodejs.onrender.com/api/celebs
-// http://localhost:5000/api/celebs
+
+
 const router = express.Router();
-
 const sendMail = async (email) => {
-    // https://www.ionos.com/help/email/general-topics/settings-for-your-email-programs-imap-pop3/?source=helpandlearn
-
     let transporter = nodemailer.createTransport({
         host: "smtp.ionos.com",
         port: 465,
@@ -42,7 +39,9 @@ const sendMail = async (email) => {
 
 router.get('/', async (req, res) => {
     console.log("get request sending celebs")
-    sendMail("dolev146@gmail.com")
+    let { email } = req.body;
+    console.log(email);
+    sendMail(`${email}`);
     res.status(200).json({ "message": "success get all celebs" })
 })
 
@@ -63,3 +62,9 @@ router.delete('/', (req, res) => {
 
 
 module.exports = router
+
+
+
+// https://politicalnodejs.onrender.com/api/celebs
+// http://localhost:5000/api/celebs
+    // https://www.ionos.com/help/email/general-topics/settings-for-your-email-programs-imap-pop3/?source=helpandlearn
