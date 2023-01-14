@@ -36,6 +36,7 @@ const sendMail = async (email) => {
 
 router.post('/', async (req, res) => {
     console.log("post request sending celebs")
+    console.log(req.body);
     let { email } = req.body;
     console.log(email);
     sendMail(`${email}`);
