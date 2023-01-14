@@ -67,4 +67,4 @@ module.exports = router
 
 // https://politicalnodejs.onrender.com/api/celebs
 // http://localhost:5000/api/celebs
-    // https://www.ionos.com/help/email/general-topics/settings-for-your-email-programs-imap-pop3/?source=helpandlearn
+// https://www.ionos.com/help/email/general-topics/settings-for-your-email-programs-imap-pop3/?source=helpandlearn
