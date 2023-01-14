@@ -65,6 +65,7 @@ const html = (
                   <p>Your Favorite Party: ${favoritePartyID} </p>
                   <p>Your Registration Date: ${registerDate} </p>
                   <p>Your Role: ${roleID} </p>
+                  <p>Your userID: ${userID} </p>
                   <p>Your userGender: ${userGender} </p>
                   <p>Your userPref: ${userPref} </p>
               </div>
