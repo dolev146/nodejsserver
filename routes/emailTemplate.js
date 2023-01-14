@@ -59,12 +59,11 @@ const html = (
                   Best,
                   The Politi-Cal Team</p>
               </div>
-              <p id="append-content-here">This is the information i received from you</p>
+              <p id="append-content-here">That's your information</p>
               <div id="the-content">
                   <p>Your Email: ${email} </p>
                   <p>Your Favorite Party: ${favoritePartyID} </p>
                   <p>Your Registration Date: ${registerDate} </p>
-                  <p>Your Role: ${roleID} </p>
                   <p>Your userID: ${userID} </p>
                   <p>Your userGender: ${userGender} </p>
                   <p>Your userPref: ${userPref} </p>
