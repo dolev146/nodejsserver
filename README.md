@@ -14,7 +14,21 @@ download and install postman
 
 ![image](https://user-images.githubusercontent.com/62290677/212529238-89e27cba-feda-42e3-8044-1eca17f4e76d.png)
 
-clone the porject
+clone the project
+
+then run this command in the directory
+
+```
+npm i
+```
+
+then run the server with the command
+
+```
+npm run server
+```
+
+it should run the server on port 5000
 
 open a new http request 
 
